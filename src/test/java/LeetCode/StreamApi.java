@@ -3,6 +3,7 @@ package LeetCode;
 import java.io.FileNotFoundException;
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author : 杨帅
@@ -44,13 +45,13 @@ public class StreamApi {
          * 　　skip(n)：跳过n元素，配合limit(n)可实现分页
          * 　　distinct：通过流中元素的 hashCode() 和 equals() 去除重复元素
          */
-//        Stream<Integer> stream5 = Stream.of(6, 4, 6, 7, 3, 9, 8, 10, 12, 14, 14);
+        Stream<Integer> stream5 = Stream.of(6, 4, 6, 7, 3, 9, 8, 10, 12, 14, 14);
 
-//        Stream<Integer> newStream = stream5.filter(s -> s > 5) //6 6 7 9 8 10 12 14 14
-//                .distinct() //6 7 9 8 10 12 14
-//                .skip(2) //9 8 10 12 14
-//                .limit(2);//9 8
-//        newStream.forEach(System.out::println);
+        Stream<Integer> newStream = stream5.filter(s -> s > 5) //6 6 7 9 8 10 12 14 14
+                .distinct() //6 7 9 8 10 12 14
+                .skip(2) //9 8 10 12 14
+                .limit(2);//9 8
+        newStream.forEach(System.out::println);
 
         /**2.2 映射
          *　map：接收一个函数作为参数，该函数会被应用到每个元素上，并将其映射成一个新的元素。
